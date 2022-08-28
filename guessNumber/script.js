@@ -1,12 +1,14 @@
 let ans = Math.trunc(Math.random() * 20 + 1);
 console.log(ans);
 let score = 20;
+let highscore = 0;
 
 document.querySelector(".again").addEventListener("click", function () {
   score = 20;
   document.querySelector(".score").textContent = score;
   document.querySelector(".message").textContent = "Start guessing...";
   ans = Math.trunc(Math.random() * 20 + 1);
+  console.log(ans);
   document.querySelector(".guess").value = "";
   document.querySelector("body").style.backgroundColor = "#222";
   document.querySelector(".number").style.width = "15rem";
@@ -22,9 +24,12 @@ document.querySelector(".check").addEventListener("click", function () {
     } else if (guess === ans) {
       document.querySelector(".message").textContent = "Correct Number 🎉";
       document.querySelector(".number").textContent = ans;
-      document.querySelector(".highscore").textContent = score;
       document.querySelector("body").style.backgroundColor = "gray";
       document.querySelector(".number").style.width = "30rem";
+      if (score > highscore) {
+        highscore = score;
+        document.querySelector(".highscore").textContent = score;
+      }
     } else if (guess > ans) {
       score--;
       document.querySelector(".message").textContent = "📈 High Number Guessed";
