@@ -12,6 +12,8 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".message").textContent = "Correct Number 🎉";
       document.querySelector(".number").textContent = ans;
       document.querySelector(".highscore").textContent = score;
+      document.querySelector("body").style.background =
+        "linear-gradient(150deg,#FF5F6D,#FFC371)";
     } else if (guess > ans) {
       score--;
       document.querySelector(".message").textContent = "High Number Guessed 📈";
