@@ -23,19 +23,18 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".message").textContent = "Correct Number 🎉";
       document.querySelector(".number").textContent = ans;
       document.querySelector(".highscore").textContent = score;
-      document.querySelector("body").style.background =
-        "linear-gradient(150deg,#FF5F6D,#FFC371)";
+      document.querySelector("body").style.backgroundColor = "gray";
       document.querySelector(".number").style.width = "30rem";
     } else if (guess > ans) {
       score--;
-      document.querySelector(".message").textContent = "High Number Guessed 📈";
+      document.querySelector(".message").textContent = "📈 High Number Guessed";
       document.querySelector(".score").textContent = score;
     } else if (guess < ans) {
       score--;
-      document.querySelector(".message").textContent = "Low Number Guessed 📉";
+      document.querySelector(".message").textContent = "📉 Low Number Guessed";
       document.querySelector(".score").textContent = score;
     }
   } else if (score == 0) {
-    document.querySelector(".message").textContent = "You lost the game ☹";
+    document.querySelector(".message").textContent = "☹ You lost the game!";
   }
 });
