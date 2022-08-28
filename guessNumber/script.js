@@ -1,6 +1,17 @@
-const ans = Math.trunc(Math.random() * 20 + 1);
+let ans = Math.trunc(Math.random() * 20 + 1);
 console.log(ans);
 let score = 20;
+
+document.querySelector(".again").addEventListener("click", function () {
+  score = 20;
+  document.querySelector(".score").textContent = score;
+  document.querySelector(".message").textContent = "Start guessing...";
+  ans = Math.trunc(Math.random() * 20 + 1);
+  document.querySelector(".guess").value = "";
+  document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector(".number").style.width = "15rem";
+  document.querySelector(".number").textContent = "?";
+});
 
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
@@ -14,6 +25,7 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".highscore").textContent = score;
       document.querySelector("body").style.background =
         "linear-gradient(150deg,#FF5F6D,#FFC371)";
+      document.querySelector(".number").style.width = "30rem";
     } else if (guess > ans) {
       score--;
       document.querySelector(".message").textContent = "High Number Guessed 📈";
